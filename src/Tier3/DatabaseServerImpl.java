@@ -1,23 +1,22 @@
 package Tier3;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class DatabaseServerImpl implements DatabaseServer
 {
 
-  private Connection c = null;
+  private Connection connection = null;
+  private Statement statement = null;
 
   @Override public void startDB()
   {
-    c = null;
+    connection = null;
     try {
       Class.forName("org.postgresql.Driver");
-      c = DriverManager
+      connection = DriverManager
           .getConnection("jdbc:postgresql://localhost:5432/Bank",
               "postgres", "1234");
-      c.setAutoCommit(false);
+//      connection.setAutoCommit(false);
       System.out.println("Opened database successfully.");
     } catch (ClassNotFoundException | SQLException e) {
       e.printStackTrace();
@@ -27,29 +26,45 @@ public class DatabaseServerImpl implements DatabaseServer
   @Override public void closeDB()
   {
     try {
-      c.close();
+      statement.close();
+      connection.close();
     } catch (SQLException throwables) {
       throwables.printStackTrace();
     }
   }
 
-  @Override public void addCustomerToDB()
+  @Override public void addToDB(String sql)
   {
+    startDB();
+    try
+    {
+      statement = connection.createStatement();
 
+      String toSql = sql;
+
+      statement.executeUpdate(toSql);
+
+
+    }
+    catch (SQLException throwables)
+    {
+      System.out.println("DB Not working!");
+    }
+    closeDB();
   }
 
-  @Override public void addAccountToDB()
+  @Override public ResultSet getFromDB(String sql)
   {
-
-  }
-
-  @Override public void setBalance()
-  {
-
-  }
-
-  @Override public void getCustomer()
-  {
-
+    try
+    {
+      statement = connection.createStatement();
+      ResultSet resultSet = statement.executeQuery(sql);
+      return resultSet;
+    }
+    catch (SQLException throwables)
+    {
+      throwables.printStackTrace();
+    }
+    return null;
   }
 }

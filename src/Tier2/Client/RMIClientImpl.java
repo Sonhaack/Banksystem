@@ -1,7 +1,7 @@
-package Tier2;
+package Tier2.Client;
 
-import java.util.ArrayList;
-import java.util.List;
+import Tier2.Client.Client;
+import Tier2.Client.ClientImpl;
 
 public class RMIClientImpl implements Client
 {

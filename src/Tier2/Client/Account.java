@@ -1,4 +1,4 @@
-package Tier2;
+package Tier2.Client;
 
 public class Account
 {

@@ -1,9 +1,10 @@
-package Tier2;
+package Tier2.Client;
 
-public class Customer extends ClientImpl
+import Tier2.Client.ClientImpl;
+
+public class Assistant extends ClientImpl
 {
-
-  public Customer(String username, int userID, String password)
+  public Assistant(String username, int userID, String password)
   {
     super(username, userID, password);
   }
