@@ -2,6 +2,11 @@ package Tier3;
 
 public interface DatabaseServer
 {
-  public double getBalance();
-  public void setBalance(String sql);
+  public void startDB();
+  public void closeDB();
+  public void addCustomerToDB();
+  public void addAccountToDB();
+  public void setBalance();
+  public void getCustomer();
+
 }
