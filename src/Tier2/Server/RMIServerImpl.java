@@ -11,6 +11,10 @@ public class RMIServerImpl implements ServerModel
 
   }
 
+  @Override
+  public void startServer() throws RemoteException {
+
+  }
 
 
 }

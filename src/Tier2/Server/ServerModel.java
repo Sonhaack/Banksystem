@@ -9,5 +9,5 @@ public interface ServerModel extends Remote
 {
   void registerClient(ClientImpl client) throws RemoteException;
   void startServer() throws RemoteException;
-  
+
 }
