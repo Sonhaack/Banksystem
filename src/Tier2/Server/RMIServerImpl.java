@@ -10,4 +10,7 @@ public class RMIServerImpl implements ServerModel
   {
 
   }
+
+
+
 }

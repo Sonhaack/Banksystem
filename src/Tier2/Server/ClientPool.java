@@ -32,5 +32,10 @@ public class ClientPool
         return pool.get(i);
     }
 
+    public List<Client> getList()
+    {
+        return pool;
+    }
+
 
 }
