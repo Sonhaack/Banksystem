@@ -15,7 +15,7 @@ public class RMIClientImpl implements Client
 
   @Override
   public void startClient() throws RemoteException {
-    
+
   }
 
   @Override public String getUsername()
