@@ -5,6 +5,7 @@ public abstract class ClientImpl implements Client
   private String username;
   private int userID;
   private String password;
+  private String title;
 
   public ClientImpl(String username, int userID, String password)
   {

@@ -9,4 +9,5 @@ public interface Client extends Remote
   public String getUsername() throws RemoteException;
   public int getUserID() throws RemoteException;
   public String getPassword() throws RemoteException;
+  public String getTitle() throws RemoteException;
 }

@@ -4,10 +4,11 @@ import Tier2.Client.ClientImpl;
 
 public class Customer extends ClientImpl
 {
-
+  private String title;
   public Customer(String username, int userID, String password)
   {
     super(username, userID, password);
+    title = "Customer";
   }
 
   @Override public void startClient()
@@ -28,5 +29,9 @@ public class Customer extends ClientImpl
   @Override public String getPassword()
   {
     return null;
+  }
+
+  public String getTitle() {
+    return title;
   }
 }

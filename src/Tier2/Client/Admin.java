@@ -2,11 +2,17 @@ package Tier2.Client;
 
 import Tier2.Client.ClientImpl;
 
+import java.rmi.RemoteException;
+
 public class Admin extends ClientImpl
 {
+  private String title;
+
   public Admin(String username, int userID, String password)
+
   {
     super(username, userID, password);
+    title = "Admin";
   }
 
   @Override public void startClient()
@@ -27,5 +33,10 @@ public class Admin extends ClientImpl
   @Override public String getPassword()
   {
     return null;
+  }
+
+  @Override
+  public String getTitle() throws RemoteException {
+    return title;
   }
 }
