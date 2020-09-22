@@ -13,4 +13,9 @@ public abstract class ClientImpl implements Client
     this.userID = userID;
     this.password = password;
   }
+
+
+
+
+
 }
