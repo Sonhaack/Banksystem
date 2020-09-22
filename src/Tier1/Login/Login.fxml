@@ -7,8 +7,8 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tier1.LoginController">
-   <children>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tier1.Login.LoginController">
+
       <Text layoutX="271.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login">
          <font>
             <Font size="24.0" />
@@ -19,5 +19,4 @@
       <TextField layoutX="283.0" layoutY="161.0" />
       <TextField layoutX="283.0" layoutY="215.0" />
       <Button layoutX="534.0" layoutY="361.0" mnemonicParsing="false" text="Login" />
-   </children>
 </AnchorPane>

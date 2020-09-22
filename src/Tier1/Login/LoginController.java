@@ -1,4 +1,4 @@
-package Tier1;
+package Tier1.Login;
 
 public class LoginController {
 }
