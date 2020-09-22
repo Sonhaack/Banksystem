@@ -6,7 +6,7 @@ public class Account
   private int accountNo;
   private Customer customer;
 
-  public Account(int accountNo, Customer customer)
+  public Account(int accountNo, Customer customer, double balance)
   {
     this.balance = balance;
     this.accountNo = accountNo;
@@ -26,14 +26,14 @@ public class Account
     return accountNo;
   }
 
-  public void withdraw(double amount)
+  public double withdraw(double amount)
   {
-
+    return balance -= amount;
   }
 
-  public void deposit(double amount)
+  public double deposit(double amount)
   {
-
+    return balance += amount;
   }
 
 

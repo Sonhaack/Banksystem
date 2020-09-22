@@ -11,23 +11,20 @@ public class CustomerHandler
 {
   private DatabaseServer dbs;
 
-  public CustomerHandler() {
-    dbs = new DatabaseServerImpl();
+  public CustomerHandler(DatabaseServer dbs) {
+    this.dbs = dbs;
   }
-
 
 
   public ResultSet getBalance(Account account) throws RemoteException {
-    String sql = "";
+    String sql = "SELECT balance FROM account WHERE account = '" + account.getAccountNo() + "';";
     return dbs.getFromDB(sql);
   }
 
-  public void withdraw(double amount) throws RemoteException {
 
-  }
-
-  public void deposit(double amount) throws RemoteException {
-
+  public void withdraw(double amount, Account account) throws RemoteException {
+    String sql = "UPDATE \"Banksystem\".account set balance = '" + account.withdraw(amount) + "' WHERE account = '" + account.getAccountNo() + "';";
+    dbs.addToDB(sql);
   }
 
 

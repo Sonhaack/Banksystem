@@ -8,8 +8,8 @@ public class Customer extends ClientImpl
 {
 
   Client client;
-
   private String title;
+
   public Customer(String username, int userID, String password)
   {
     super(username, userID, password);
@@ -22,19 +22,18 @@ public class Customer extends ClientImpl
 
   }
 
-  @Override public String getUsername()
-  {
-    return null;
+  @Override public String getUsername() throws RemoteException {
+    return getUsername();
   }
 
   @Override public int getUserID()
   {
-    return 0;
+    return getUserID();
   }
 
   @Override public String getPassword()
   {
-    return null;
+    return getPassword();
   }
 
   public String getTitle() {
