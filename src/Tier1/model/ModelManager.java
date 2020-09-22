@@ -1,18 +1,20 @@
 package Tier1.model;
 
 import Tier2.Client.Account;
+import Tier2.Client.Client;
 import Tier2.Client.Customer;
 import Tier2.Client.RMIClientImpl;
 
+import java.beans.PropertyChangeListener;
 import java.rmi.AlreadyBoundException;
 import java.rmi.RemoteException;
 import java.sql.ResultSet;
 
 public class ModelManager implements Model {
 
-  private RMIClientImpl client;
+  private Client client;
 
-  public ModelManager(RMIClientImpl client) {
+  public ModelManager(Client client) {
     this.client = client;
   }
 
@@ -51,5 +53,27 @@ public class ModelManager implements Model {
 
   @Override public boolean verifyLogin() {
     return false;
+  }
+
+
+
+
+
+
+
+
+
+  @Override public void addListener(String eventname,
+      PropertyChangeListener listener) {
+
+  }
+
+  @Override public void addListener(PropertyChangeListener listener) {
+
+  }
+
+  @Override public void removeListener(String eventname,
+      PropertyChangeListener listener) {
+
   }
 }

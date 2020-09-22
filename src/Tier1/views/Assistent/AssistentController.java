@@ -1,4 +1,4 @@
-package Tier1.Assistent;
+package Tier1.views.Assistent;
 
 public class AssistentController {
 }

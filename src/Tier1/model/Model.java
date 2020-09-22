@@ -1,5 +1,6 @@
 package Tier1.model;
 
+import Shared.Subject;
 import Tier2.Client.Account;
 import Tier2.Client.Customer;
 
@@ -7,7 +8,7 @@ import java.rmi.AlreadyBoundException;
 import java.rmi.RemoteException;
 import java.sql.ResultSet;
 
-public interface Model {
+public interface Model extends Subject {
 
 
   void withdrawMoney(double amount, Account account) throws RemoteException;

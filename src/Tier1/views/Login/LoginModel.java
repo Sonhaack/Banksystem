@@ -1,4 +1,4 @@
-package Tier1.Login;
+package Tier1.views.Login;
 
 import Tier1.model.Model;
 

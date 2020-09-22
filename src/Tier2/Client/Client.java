@@ -1,14 +1,16 @@
 package Tier2.Client;
 
+import Shared.Subject;
+
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 
-public interface Client extends Remote
+public interface Client extends Subject
 {
-  public void startClient() throws RemoteException;
-  public String getUsername() throws RemoteException;
-  public int getUserID() throws RemoteException;
-  public String getPassword() throws RemoteException;
-  public String getTitle() throws RemoteException;
+  public void startClient();
+  public String getUsername();
+  public int getUserID();
+  public String getPassword();
+  public String getTitle();
 
 }

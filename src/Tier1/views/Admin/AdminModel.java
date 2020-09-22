@@ -1,4 +1,4 @@
-package Tier1.Admin;
+package Tier1.views.Admin;
 
 public class AdminModel {
 }

@@ -1,4 +1,4 @@
-package Tier1.Customer;
+package Tier1.views.Customer;
 
 public class CustomerModel {
 }

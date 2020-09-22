@@ -2,6 +2,7 @@ package Tier2.Client;
 
 import Tier2.Client.ClientImpl;
 
+import java.beans.PropertyChangeListener;
 import java.rmi.RemoteException;
 
 public class Assistant extends ClientImpl
@@ -36,7 +37,21 @@ public class Assistant extends ClientImpl
   }
 
   @Override
-  public String getTitle() throws RemoteException {
+  public String getTitle() {
     return null;
+  }
+
+  @Override public void addListener(String eventname,
+      PropertyChangeListener listener) {
+
+  }
+
+  @Override public void addListener(PropertyChangeListener listener) {
+
+  }
+
+  @Override public void removeListener(String eventname,
+      PropertyChangeListener listener) {
+
   }
 }
