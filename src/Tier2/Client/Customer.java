@@ -2,13 +2,19 @@ package Tier2.Client;
 
 import Tier2.Client.ClientImpl;
 
+import java.rmi.RemoteException;
+
 public class Customer extends ClientImpl
 {
+
+  Client client;
+
   private String title;
   public Customer(String username, int userID, String password)
   {
     super(username, userID, password);
     title = "Customer";
+    client = new RMIClientImpl();
   }
 
   @Override public void startClient()
@@ -34,4 +40,6 @@ public class Customer extends ClientImpl
   public String getTitle() {
     return title;
   }
+
+
 }

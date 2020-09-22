@@ -10,4 +10,5 @@ public interface Client extends Remote
   public int getUserID() throws RemoteException;
   public String getPassword() throws RemoteException;
   public String getTitle() throws RemoteException;
+
 }
