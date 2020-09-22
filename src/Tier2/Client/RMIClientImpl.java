@@ -17,7 +17,7 @@ public class RMIClientImpl implements Client
 
 
   public RMIClientImpl() {
-
+    sm = new RMIServerImpl();
   }
 
 
