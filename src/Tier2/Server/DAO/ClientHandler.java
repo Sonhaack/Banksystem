@@ -1,21 +1,18 @@
 package Tier2.Server.DAO;
 
-import Tier2.Client.Account;
 import Tier2.Client.Customer;
 import Tier3.DatabaseServer;
-import Tier3.DatabaseServerImpl;
 
 import java.rmi.RemoteException;
-import java.sql.ResultSet;
 
-public class AdminHandler
+public class ClientHandler
 {
-  private DatabaseServer dbs;
 
-  public AdminHandler(DatabaseServer dbs) {
+  DatabaseServer dbs;
+
+  public ClientHandler(DatabaseServer dbs) {
     this.dbs = dbs;
   }
-
 
 
   public void createCustomer(String username, String password, int userID) {
@@ -28,6 +25,15 @@ public class AdminHandler
       throws RemoteException {
     String sql = "INSERT into \"Banksystem\".account(account, balance, username) VALUES ('" + accountNo + "', '" + 0 + "','" + customer.getUsername()+ "');";
     dbs.addToDB(sql);
+  }
+
+
+  public Customer retrieveCustomer(String username, String password) {
+
+
+    String sql = "";
+    dbs.getFromDB(sql);
+    return null;
   }
 
 

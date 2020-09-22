@@ -3,13 +3,22 @@ package Tier2.Server;
 import Tier2.Client.Client;
 import Tier2.Client.ClientImpl;
 import Tier3.DatabaseServer;
+import Tier3.DatabaseServerImpl;
 
+import java.rmi.AlreadyBoundException;
 import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+import java.rmi.server.UnicastRemoteObject;
 
 public class RMIServerImpl implements ServerModel
 {
 
   private DatabaseServer DBS;
+
+  public RMIServerImpl() {
+    DBS = new DatabaseServerImpl();
+  }
 
   @Override public void registerClient(Client client) throws RemoteException
   {
@@ -17,9 +26,12 @@ public class RMIServerImpl implements ServerModel
   }
 
   @Override
-  public void startServer() throws RemoteException
-  {
-
+  public void startServer() throws RemoteException, AlreadyBoundException {
+    UnicastRemoteObject.exportObject(this, 0);
+    Registry registry = LocateRegistry.createRegistry(1099);
+    registry.bind("BankServer", this);
+    DBS.startDB();
+    System.out.println("Server started");
   }
 
   @Override
